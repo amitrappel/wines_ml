@@ -1,0 +1,13 @@
+name: tutorial
+
+conda_env: conda.yaml
+
+entry_points:
+  main:
+    parameters:
+      quantile: {type: int, default: 99}
+      scaler_type: {type: str, default: "minmax"}
+      k: {type: int, default: 5}
+      max_depth: {type: int, default: 6}
+      min_samples_leaf: {type: int, default: 15}
+    command: "python wines02args.py --quantile {quantile} --scaler_type {scaler_type} --k {k} --max_depth {max_depth} --min_samples_leaf {min_samples_leaf}"
